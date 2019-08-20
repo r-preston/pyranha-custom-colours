@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Pyranha Kayaks custom colours</title>
+        <link rel="stylesheet" type="text/css" href="PCC-style.css">
+        <link rel="stylesheet" type="text/css" href="PCC-options-table.css">
+        <script type="text/javascript" src="PCC-info.js"></script>
+        <script type="text/javascript" src="PCC-helpers.js"></script>
+        <script type="text/javascript" src="PCC-maths_funcs.js"></script>
+        <script type="text/javascript" src="PCC-main.js"></script>
+    </head>
+    <body>
+        <div id="PCC-wrapper">
+            <div id="PCC-kayak-images">
+                <img class="PCC-src-image" id="PCC-src-image_" src="//:0"/>
+                <img class="PCC-src-image" id="PCC-src-image_Grabs" src="//:0"/>
+                <img class="PCC-src-image" id="PCC-src-image_Trim" src="//:0"/>
+                <img class="PCC-src-image" id="PCC-src-image_Misc" src="//:0"/>
+            </div>
+            <table id="PCC-choice-table">
+                <tr>
+                    <td style="padding:5px;" rowspan="2">Kayak
+                        <div id="PCC-kayak-logo">
+                                <a id="PCC-logo-link" class="PCC-tooltip" target="_blank" href="http://www.pyranha.com/">
+                                    <span class="PCC-tooltiptext PCC-ttp-right">
+                                        Visit this kayak's page
+                                    </span>
+                                    <span class="PCC-link-spanner"></span>
+                                </a>
+                        </div>
+                    </td>
+                    <td style="padding:5px;">Base colour</td>
+                    <td style="padding:5px;">Bow splash</td>
+                    <td style="padding:5px;">Stern splash</td>
+                    <td style="padding:5px;">Grab handles</td>
+                    <td style="padding:5px;">Seat trim</td> 
+                    <td style="text-align: center" rowspan="3">
+                        <div onclick="PCC_MAIN.random_colours()" id="PCC-surprise-button" class="PCC-user-input">Surprise me!</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td id="PCC-hull-highlight" class="PCC-highlight-cell">
+                        <div>You</div>
+                    </td>
+                    <td id="PCC-bow-highlight" class="PCC-highlight-cell">
+                        <div>shouldn't</div>
+                    </td>
+                    <td id="PCC-stern-highlight" class="PCC-highlight-cell">
+                        <div>see</div>
+                    </td>
+                    <td id="PCC-grabs-highlight" class="PCC-highlight-cell">
+                        <div>this</div>
+                    </td>
+                    <td id="PCC-trim-highlight" class="PCC-highlight-cell">
+                        <div>text</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <select onchange="PCC_MAIN.update_kayak()" id="PCC-kayak-form" class="PCC-user-input" name="kayak">
+                            <option value="Ripper" selected="selected">Ripper</option>
+                            <option value="Machno">Machno</option>
+                            <option value="NineRII">9R II</option>
+                            <option value="NineR">9R</option>
+                            <option value="TwelveR">12R</option>
+                            <option value="Jed">Jed</option>
+                            <option value="Rebel">Rebel</option>
+                            <option value="FusionII">Fusion II</option>
+                            <option value="FusionDuo">Fusion Duo</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select onchange="PCC_MAIN.update_colours()"
+                                id="PCC-basecolour-form"
+                                class="PCC-user-input PCC-select-colour"
+                                name="basecolour">
+                            <option value="Yellow" size=6 selected="selected">Yellow</option>
+                            <option value="Jaffa">Jaffa</option>
+                            <option value="Red">Red</option>
+                            <option value="Black">Black</option>
+                            <option value="Turquoise">Turquoise</option>
+                            <option value="Lime">Lime</option>
+                            <option value="Fuchsia">Fuchsia</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select onchange="PCC_MAIN.update_colours()"
+                                id="PCC-bowsplash-form"
+                                class="PCC-user-input PCC-select-colour"
+                                name="bowsplash">
+                            <option value="Red" selected="selected">Red</option>
+                            <option value="Yellow">Yellow</option>
+                            <option value="Jaffa">Jaffa</option>
+                            <option value="Black">Black</option>
+                            <option value="Turquoise">Turquoise</option>
+                            <option value="Lime">Lime</option>
+                            <option value="Fuchsia">Fuchsia</option>
+                            <option value="Purple">Purple</option>
+                            <option value="DarkGreen">Dark Green</option>
+                            <option value="DarkBlue">Dark Blue</option>
+                            <option value="White">White</option>
+                            <option value="DarkGrey">Dark Grey</option>
+                            <option value="LightGrey">Light Grey</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select onchange="PCC_MAIN.update_colours()"
+                                id="PCC-sternsplash-form"
+                                class="PCC-user-input PCC-select-colour"
+                                name="sternsplash">
+                            <option value="DarkGreen" selected="selected">Dark Green</option>
+                            <option value="Yellow">Yellow</option>
+                            <option value="Jaffa">Jaffa</option>
+                            <option value="Red">Red</option>
+                            <option value="Black">Black</option>
+                            <option value="Turquoise">Turquoise</option>
+                            <option value="Lime">Lime</option>
+                            <option value="Fuchsia">Fuchsia</option>
+                            <option value="Purple">Purple</option>
+                            <option value="DarkBlue">Dark Blue</option>
+                            <option value="White">White</option>
+                            <option value="DarkGrey">Dark Grey</option>
+                            <option value="LightGrey">Light Grey</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select onchange="PCC_MAIN.update_grabs()"
+                                id="PCC-grabhandles-form"
+                                class="PCC-user-input"
+                                name="grabhandles">
+                            <option value="Grey" selected="selected">Grey</option>
+                            <option value="Red">Red</option>
+                            <option value="Yellow">Yellow</option>
+                            <option value="Purple">Purple</option>
+                            <option value="Blue">Blue</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select onchange="PCC_MAIN.update_trim()"
+                                id="PCC-seattrim-form"
+                                class="PCC-user-input"
+                                name="seattrim">
+                            <option value="Black" selected="selected">Black</option>
+                            <option value="Red">Red</option>
+                            <option value="Yellow">Yellow</option>
+                            <option value="Blue">Blue</option>
+                        </select>
+                    </td>
+                </tr>
+            </table>
+
+            <div class="PCC-infotext" id="PCC-order-form-link">
+                Click here to open the <a target="_blank" href="http://www.pyranha.com/pdfs/pyranha_custom_colours_2019_r1.pdf">Pyranha custom kayak order form</a>
+            </div>
+            <div class="PCC-infotext">Please note: the pattern of all kayaks are unique and may differ from the simulated image below</div>
+
+            <div id="PCC-error-box"></div>
+            <div id="PCC-canvas-wrapper">
+                <canvas class="PCC-kayak-canvas" id="PCC-reference-canvas"></canvas>
+                <canvas class="PCC-kayak-canvas" id="PCC-main-canvas"></canvas>
+                <canvas class="PCC-kayak-canvas" id="PCC-misc-canvas"></canvas>
+                <canvas class="PCC-kayak-canvas" id="PCC-grabs-canvas"></canvas>
+                <canvas class="PCC-kayak-canvas" id="PCC-trim-canvas"></canvas>
+            </div>
+
+            <div class="PCC-infotext" id="PCC-download-image"><span onclick="PCC_MAIN.download_render()">Download image</span></div>
+            <div class="PCC-infotext PCC-tooltip" id="PCC-imgscale-selector">
+                Image resolution
+                <span class="PCC-tooltiptext PCC-ttp-left">
+                    Use this to choose image resolution. Higher resolution leads to better looking images but means longer loading times,
+                    lower resolutions are faster but may appear blurry. Auto adjusts resolution based on browser size.
+                </span>
+                <select id="PCC-imgsize-options">
+                    <option value="auto" selected="selected">Auto</option>
+                    <option value="max">Max</option>
+                    <option value="large">High</option>
+                    <option value="medium">Medium</option>
+                    <option value="small">Low</option>
+                    <option value="tiny">Very low</option>
+                </select>
+            </div>
+
+            <div id="PCC-angry-fish-loading-message">
+                <div id="PCC-swimmy-angryfish"></div>
+                <div id="PCC-angry-fish-loading-message-text"></div>
+            </div>
+            <div id="PCC-colour-indicator"></div>
+        </div>
+    </body>
+</html>
