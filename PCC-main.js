@@ -1,7 +1,7 @@
 /*
 What next?
  - revise more you lazy sod
- - commenting
+ - READMEs
  - review colour options
  - host this somewhere, Pi maybe
  - mobile scaling (urgh)
