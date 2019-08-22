@@ -115,6 +115,35 @@ resize_wrapper: function resize_wrapper()
     }
 },
 
+check_page_scaling: function check_page_scaling()
+{
+    var w = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
+    var h = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
+
+    var mobile_ratio_cutoff = 1;
+
+    if ((h/w > mobile_ratio_cutoff) && (PCC_INFO.page_layout === 'desktop'))
+    {
+        PCC_INFO.page_layout = 'mobile'
+
+        //document.getElementById("PCC-table-needs-border").style.border = "none";
+        document.getElementById("PCC-surprise-button").style.height = "196px";
+        var tables = document.getElementsByClassName("PCC-choice-table");
+        tables[0].style.width = "100%";
+        tables[1].style.width = "100%";
+    }
+    else if ((h/w < mobile_ratio_cutoff) && (PCC_INFO.page_layout === 'mobile'))
+    {
+        PCC_INFO.page_layout = 'desktop'
+        // change display to desktop mode
+        //document.getElementById("PCC-table-needs-border").style.borderRight = "1px solid white";
+        document.getElementById("PCC-surprise-button").style.height = "98px";
+        var tables = document.getElementsByClassName("PCC-choice-table");
+        tables[0].style.width = "50%";
+        tables[1].style.width = "50%";
+    }
+},
+
 display_error: function display_error(message)
 {
     // lets the user know that something has gone wrong

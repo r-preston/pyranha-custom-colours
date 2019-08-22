@@ -1,35 +1,49 @@
-#PCC-choice-table{
+#PCC-options-wrapper {
+  width: 85%;
+  display: block;
+  position: relative;
+}
+
+.PCC-choice-table{
   margin-left: auto;
   margin-right: auto;
   background-color: #3ea3dc;
-  width: 100%;
+  width: 50%;
   table-layout: fixed;
   height: 60px;
   border:none;
   padding: 0px;
   border-collapse: collapse;
+  display: inline-table;
 }
-#PCC-choice-table * {
+.PCC-choice-table * {
   font-weight: 400;
   color: white;
   padding: 0px;
   margin: 0px;
-  font-size: 16px;
+  font-size: 18px;
   border: none;
-  border-collapse: collapse;
+  /*border-collapse: collapse;*/
 }
-#PCC-choice-table td{
+.PCC-choice-table select {
+  font-size: 20px;
+}
+.PCC-choice-table td{
   height: 100%;
   position: relative;
-  border-left: 1px solid white;
+  border-right: 1px solid white;
+  max-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
-#PCC-choice-table tr{
+.PCC-choice-table tr{
   border-bottom: 1px solid white;
 }
-#PCC-choice-table td:first-child {
+/*.PCC-choice-table td:first-child {
   border-left: none;
-}
-#PCC-choice-table select{
+}*/
+.PCC-choice-table select{
   -o-appearance: none;
   -ms-appearance: none;
   -moz-appearance: none;
@@ -44,25 +58,39 @@
   background: #3ea3dc url(./PCC-resource/down_arrowwhite.png) no-repeat right center;
   font-weight: 500;
 }
-#PCC-choice-table select option{
+.PCC-choice-table select option{
   background-color: #333;
   line-height: 22px;
 }
 #PCC-surprise-button{
-  height: 84px;
-  height: 100%;
-  padding: 5px;
-  padding-top: 32px;
-  line-height: 16px;
+  position: absolute;
+  height: 98px;
+  width: 15%;
+  right: 0px;
+  top: 0px;
+  display: table;
+  font-weight: 400;
+  color: white;
   background-color: #3ea3dc;
-  -o-transition: .5s;
-  -ms-transition: .5s;
-  -moz-transition: .5s;
-  -webkit-transition: .5s;
-  transition: .5s;
+  -o-transition: .5s background;
+  -ms-transition: .5s background;
+  -moz-transition: .5s background;
+  -webkit-transition: .5s background;
+  transition: .5s background;
   box-sizing: border-box;
-  border: none;
+  border-bottom: 1px solid white;
   font-weight: 500;
+  font-size: 3vw;
+  padding: 5px;
+  z-index: 10;
+}
+#PCC-surprise-button span{
+    position: relative;
+    width: 100%;
+    text-align: center;
+    display:table-cell;
+    vertical-align:middle;
+
 }
 #PCC-surprise-button:hover{
   background-color: #333;
@@ -97,7 +125,6 @@ td:first-of-type{
   visibility: hidden;
   position: absolute;
   z-index: 10000;
-  background-color: red;
   border: 1px solid #333;
 }
 #PCC-colour-indicator div{

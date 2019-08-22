@@ -10,6 +10,8 @@ loaded_images: 0,
 
 // should the page layout be desktop friendly or mobile friendly?
 page_layout: 'desktop',
+// does the device use a touchscreen?
+touchscreen: false,
 
 /* specifies what size of image to use based on how large the browser window is
    five possible values:

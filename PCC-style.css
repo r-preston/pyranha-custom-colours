@@ -4,6 +4,7 @@
     display: block;
     margin: 0;
     padding: 0;
+    font-size: 0;
 }
 #PCC-wrapper * {
     font-family: 'Open Sans', 'Segoe UI', Tahoma, Verdana, helvetica, sans-serif;
@@ -11,7 +12,7 @@
 #PCC-error-box{
     width:100%;
     color: #e00000;
-    font-size: 16px;
+    font-size: 22px;
     font-weight: 400;
     text-align: center;
 }
@@ -20,10 +21,10 @@
     position: relative;
 }
 .PCC-kayak-canvas{
-    margin-left: 6%;
+    margin-left: 2%;
     margin-top: 20px;
     position: absolute;
-    width:88%;
+    width:96%;
 }
 #PCC-reference-canvas{
     position: absolute;
@@ -54,7 +55,7 @@
 
 #PCC-angry-fish-loading-message-text{
     display: block;
-    font-size: 22px;
+    font-size: 24px;
     font-family: 'Open Sans', 'Segoe UI', Tahoma, Verdana, helvetica, sans-serif;
     color: #4d4d4d;
     font-weight: 400;
@@ -74,10 +75,10 @@
 .PCC-infotext{
     text-align: center;
     color: #4d4d4d;
-    font-size: 12px;
+    font-size: 14px;
 }
 #PCC-order-form-link{
-    font-size: 18px;
+    font-size: 20px;
 }
 
 #PCC-order-form-link a{
@@ -88,14 +89,14 @@
     position: absolute;
     bottom: 0px;
     right: 0px;
-    font-size: 16px;
+    font-size: 20px;
     cursor: pointer;
 }
 #PCC-download-image{
     position: absolute;
     bottom: 0px;
     left: 0px;
-    font-size: 16px;
+    font-size: 20px;
     text-decoration: underline;
     cursor: pointer;
 }
@@ -104,6 +105,7 @@
 }
 #PCC-imgsize-options{
     border-color: #4d4d4d;
+    font-size: 16px;
 }
 
 .PCC-tooltip .PCC-tooltiptext {

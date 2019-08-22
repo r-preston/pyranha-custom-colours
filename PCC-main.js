@@ -4,7 +4,10 @@ What next?
  - READMEs
  - review colour options
  - host this somewhere, Pi maybe
- - mobile scaling (urgh)
+ - mobile scaling
+    > canvases at 100% width
+    > bigger buttons, double row?
+    > bigger font
 */
 
 window.addEventListener("load", function(event)
@@ -18,6 +21,8 @@ window.addEventListener("load", function(event)
                        "supported, which may mean this page does not work properly.\nConsider upgrading to a "+
                        "modern browser such as Edge, Firefox or Chrome to ensure everything works as it should.");
         }
+        // adjust scaling depending on the viewport dimensions
+        PCC_HELPERS.check_page_scaling();
 
         // set the colour options to a random selection. variety is the spice of life
         // false means don't run any of the update functions yet, as the canvases aren't ready
@@ -92,8 +97,16 @@ window.addEventListener("load", function(event)
     }
 })
 
+window.addEventListener('touchstart', function()
+{
+    // the user has touched the screen, so enable touchscreen usage
+    PCC_INFO.touchscreen = true;
+    document.getElementById("PCC-colour-indicator").style.visibility = "hidden";
+})
+
 window.addEventListener("click", function(event)
 {
+    if(PCC_INFO.touchscreen) { return 0; }
     // handles showing and hiding the colour squares that appear next to dropdowns. this couldn't be added into the select element so is done manually
 
     // select elements that need colour indicators and their respective lists of RGB values
@@ -147,6 +160,7 @@ window.addEventListener("click", function(event)
 window.addEventListener("resize", function(event)
 {
     // canvases will scale with window, so need to resize wrapper with them
+    PCC_HELPERS.check_page_scaling();
     PCC_HELPERS.resize_wrapper();
 })
 
