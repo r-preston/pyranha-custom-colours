@@ -1,47 +1,69 @@
-#PCC-wrapper{
+#PCC-wrapper
+{
     width: 100%;
     position: relative;
     display: block;
     margin: 0;
     padding: 0;
     font-size: 0;
+    background-color: white;
 }
-#PCC-wrapper * {
+
+#PCC-wrapper *
+{
     font-family: 'Open Sans', 'Segoe UI', Tahoma, Verdana, helvetica, sans-serif;
 }
-#PCC-error-box{
+
+#PCC-error-box
+{
     width:100%;
     color: #e00000;
     font-size: 22px;
     font-weight: 400;
     text-align: center;
 }
-#PCC-canvas-wrapper{
+
+#PCC-canvas-wrapper
+{
     width:100%;
     position: relative;
+    display: block;
+    float: left;
+    min-height: 1px;
+    margin-bottom: 12px;
 }
-.PCC-kayak-canvas{
+
+.PCC-kayak-canvas
+{
     margin-left: 2%;
     margin-top: 20px;
     position: absolute;
+    left: 0px;
     width:96%;
 }
-#PCC-reference-canvas{
-    position: absolute;
+
+#PCC-reference-canvas
+{
+    position: relative;
+    display: inline;
+    visibility: hidden;
 }
-#PCC-kayak-images img{
+
+#PCC-kayak-images img
+{
     display:none;
 }
-#PCC-canvas-layers{
-    display:none;
-}
-#PCC-angry-fish-loading-message{
-    margin-left: 2.5%;
-    margin-top: 40px;
-    position: absolute;
+
+#PCC-angry-fish-loading-message
+{
+    margin: 2.5%;
+    position: relative;
+    float: left;
     width:95%;
 }
-#PCC-swimmy-angryfish{
+
+#PCC-swimmy-angryfish
+{
     width: 200px;
     height: 200px;
     margin-left: auto;
@@ -53,7 +75,8 @@
     background-image: url("PCC-resource/impatient_angryfish.png");
 }
 
-#PCC-angry-fish-loading-message-text{
+#PCC-angry-fish-loading-message-text
+{
     display: block;
     font-size: 24px;
     font-family: 'Open Sans', 'Segoe UI', Tahoma, Verdana, helvetica, sans-serif;
@@ -63,8 +86,9 @@
     position: relative;
 }
 
-.PCC-link-spanner{
-    position:absolute; 
+.PCC-link-spanner
+{
+    position:absolute;
     width:100%;
     height:100%;
     top:0;
@@ -72,43 +96,62 @@
     z-index: 1;
 }
 
-.PCC-infotext{
+.PCC-infotext
+{
     text-align: center;
     color: #4d4d4d;
     font-size: 14px;
 }
-#PCC-order-form-link{
-    font-size: 20px;
+
+#PCC-order-form-link
+{
+    font-size: 18px;
+    padding: 5px 0;
 }
 
-#PCC-order-form-link a{
+#PCC-order-form-link a
+{
     color: #3ea3dc;
     font-weight: bold;
 }
-#PCC-imgscale-selector{
-    position: absolute;
-    bottom: 0px;
-    right: 0px;
-    font-size: 20px;
+
+#PCC-imgscale-selector
+{
+    float: right;
+    font-size: 16px;
     cursor: pointer;
 }
-#PCC-download-image{
-    position: absolute;
-    bottom: 0px;
-    left: 0px;
-    font-size: 20px;
+
+#PCC-download-image
+{
+    float: left;
+    margin: auto;
+    font-size: 16px;
     text-decoration: underline;
     cursor: pointer;
 }
-#PCC-download-image:active{
-    color: #3ea3dc;
-}
-#PCC-imgsize-options{
-    border-color: #4d4d4d;
-    font-size: 16px;
+
+#PCC-appearance-disclaimer
+{
+    width: 100%;
+    margin-top: 12px;
+    display: block;
+    float: left;
 }
 
-.PCC-tooltip .PCC-tooltiptext {
+#PCC-download-image:active
+{
+    color: #3ea3dc;
+}
+
+#PCC-imgsize-options
+{
+    border-color: #4d4d4d;
+    font-size: 14px;
+}
+
+.PCC-tooltip .PCC-tooltiptext
+{
     visibility: hidden;
     opacity: 0;
     background-color: #333;
@@ -118,22 +161,26 @@
     border-radius: 6px;
     position: absolute;
     z-index: 1;
-    transition: 0.1s opacity 0.4s; 
+    transition: 0.1s opacity 0.4s;
     border: 1px solid #eeeeee;
 }
 
-.PCC-ttp-left{
+.PCC-ttp-left
+{
     width: 300px;
     bottom: 100%;
     right: 50%;
 }
-.PCC-ttp-right{
+
+.PCC-ttp-right
+{
     width: 300px;
     top: 30%;
-    left: 100%; 
+    left: 100%;
 }
 
-.PCC-tooltip:hover .PCC-tooltiptext {
+.PCC-tooltip:hover .PCC-tooltiptext
+{
     opacity: 1;
     visibility: visible;
 }

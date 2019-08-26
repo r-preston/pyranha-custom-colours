@@ -1,133 +1,143 @@
-#PCC-options-wrapper {
-  width: 85%;
-  display: block;
-  position: relative;
+#PCC-options-wrapper
+{
+    width: 85%;
+    position: relative;
 }
 
-.PCC-choice-table{
-  margin-left: auto;
-  margin-right: auto;
-  background-color: #3ea3dc;
-  width: 50%;
-  table-layout: fixed;
-  height: 60px;
-  border:none;
-  padding: 0px;
-  border-collapse: collapse;
-  display: inline-table;
+.PCC-choice-table
+{
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #3ea3dc;
+    width: 50%;
+    table-layout: fixed;
+    height: 60px;
+    border:none;
+    padding: 0px;
+    border-collapse: collapse;
+    display: inline-table;
 }
-.PCC-choice-table * {
-  font-weight: 400;
-  color: white;
-  padding: 0px;
-  margin: 0px;
-  font-size: 18px;
-  border: none;
-  /*border-collapse: collapse;*/
+
+.PCC-choice-table *
+{
+    font-weight: 400;
+    color: white;
+    padding: 0px;
+    margin: 0px;
+    font-size: 18px;
+    border: none;
 }
-.PCC-choice-table select {
-  font-size: 20px;
+
+.PCC-choice-table td
+{
+    position: relative;
+    border-right: 1px solid white;
+    max-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
-.PCC-choice-table td{
-  height: 100%;
-  position: relative;
-  border-right: 1px solid white;
-  max-width: 0;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
+
+.PCC-choice-table tr
+{
+    border-bottom: 1px solid white;
 }
-.PCC-choice-table tr{
-  border-bottom: 1px solid white;
+
+.PCC-choice-table select
+{
+    -o-appearance: none;
+    -ms-appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+    cursor: pointer;
+    width: 100%;
+    height: 100%;
+    padding: 5px;
+    padding-right: 30px;
+    text-overflow: ellipsis;
+    background: #3ea3dc url(./PCC-resource/down_arrowwhite.png) no-repeat right center;
+    font-weight: 500;
 }
-/*.PCC-choice-table td:first-child {
-  border-left: none;
-}*/
-.PCC-choice-table select{
-  -o-appearance: none;
-  -ms-appearance: none;
-  -moz-appearance: none;
-  -webkit-appearance: none;
-  appearance: none;
-  cursor: pointer;
-  width: 100%;
-  height: 100%;
-  padding: 5px;
-  padding-right: 30px;
-  text-overflow: ellipsis;
-  background: #3ea3dc url(./PCC-resource/down_arrowwhite.png) no-repeat right center;
-  font-weight: 500;
+
+.PCC-choice-table select option
+{
+    background-color: #333;
 }
-.PCC-choice-table select option{
-  background-color: #333;
-  line-height: 22px;
+
+#PCC-surprise-button
+{
+    float: left;
+    width: 15%;
+    display: table;
+    font-weight: 400;
+    color: white;
+    background-color: #3ea3dc;
+    -o-transition: .5s background;
+    -ms-transition: .5s background;
+    -moz-transition: .5s background;
+    -webkit-transition: .5s background;
+    transition: .5s background;
+    box-sizing: border-box;
+    border-bottom: 1px solid white;
+    font-weight: 500;
+    font-size: 24px;
+    padding: 5px;
+    z-index: 10;
 }
-#PCC-surprise-button{
-  position: absolute;
-  height: 98px;
-  width: 15%;
-  right: 0px;
-  top: 0px;
-  display: table;
-  font-weight: 400;
-  color: white;
-  background-color: #3ea3dc;
-  -o-transition: .5s background;
-  -ms-transition: .5s background;
-  -moz-transition: .5s background;
-  -webkit-transition: .5s background;
-  transition: .5s background;
-  box-sizing: border-box;
-  border-bottom: 1px solid white;
-  font-weight: 500;
-  font-size: 3vw;
-  padding: 5px;
-  z-index: 10;
-}
-#PCC-surprise-button span{
+
+#PCC-surprise-button span
+{
     position: relative;
     width: 100%;
     text-align: center;
     display:table-cell;
     vertical-align:middle;
+}
 
+#PCC-surprise-button:hover
+{
+    background-color: #333;
+    cursor: pointer;
 }
-#PCC-surprise-button:hover{
-  background-color: #333;
-  cursor: pointer;
+
+.PCC-highlight-cell
+{
+    box-sizing: border-box;
+    height: 20px;
 }
-.PCC-highlight-cell{
-  box-sizing: border-box;
-  height: 20px;
+
+.PCC-highlight-cell div
+{
+    visibility: hidden;
 }
-.PCC-highlight-cell div{
-  visibility: hidden;
+
+#PCC-kayak-logo
+{
+    width: 45%;
+    height: 90%;
+    box-sizing: border-box;
+    visibility: visible;
+    position: absolute;
+    right: 5%;
+    top: 5%;
+    background-origin: border-box;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    cursor: pointer;
 }
-#PCC-kayak-logo{
-  width: 45%;
-  height: 90%;
-  box-sizing: border-box;
-  visibility: visible;
-  position: absolute;
-  right: 5%;
-  top: 5%;
-  background-origin: border-box;
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position: center;
-  cursor: pointer;
-}
-td:first-of-type{
-  vertical-align: top;
-}
+
 #PCC-colour-indicator
 {
-  visibility: hidden;
-  position: absolute;
-  z-index: 10000;
-  border: 1px solid #333;
+    visibility: hidden;
+    position: absolute;
+    z-index: 10000;
+    border: 1px solid #333;
 }
-#PCC-colour-indicator div{
+
+#PCC-colour-indicator div
+{
     height: 22px;
     width: 22px;
     position: relative;

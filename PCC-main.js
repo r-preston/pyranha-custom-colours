@@ -3,11 +3,6 @@ What next?
  - revise more you lazy sod
  - READMEs
  - review colour options
- - host this somewhere, Pi maybe
- - mobile scaling
-    > canvases at 100% width
-    > bigger buttons, double row?
-    > bigger font
 */
 
 window.addEventListener("load", function(event)
@@ -18,11 +13,9 @@ window.addEventListener("load", function(event)
         {
             // you can guarantee someone's going to still be using IE *deep sigh*
             this.alert("ATTENTION - you appear to be using Internet Explorer.\nThis browser is no longer widely "+
-                       "supported, which may mean this page does not work properly.\nConsider upgrading to a "+
-                       "modern browser such as Edge, Firefox or Chrome to ensure everything works as it should.");
+                       "supported, which may mean this page does not work properly.\nConsider using a modern "+
+                       "browser such as Edge, Firefox or Chrome to ensure everything works as it should.");
         }
-        // adjust scaling depending on the viewport dimensions
-        PCC_HELPERS.check_page_scaling();
 
         // set the colour options to a random selection. variety is the spice of life
         // false means don't run any of the update functions yet, as the canvases aren't ready
@@ -88,6 +81,9 @@ window.addEventListener("load", function(event)
             user_inputs[i].addEventListener("change", function(event) { PCC_HELPERS.clear_error(); } );
         }
 
+        // adjust scaling depending on the viewport dimensions
+        PCC_HELPERS.check_page_scaling();
+
         // start the process running
         PCC_MAIN.update_kayak();
     }
@@ -100,8 +96,35 @@ window.addEventListener("load", function(event)
 window.addEventListener('touchstart', function()
 {
     // the user has touched the screen, so enable touchscreen usage
-    PCC_INFO.touchscreen = true;
-    document.getElementById("PCC-colour-indicator").style.visibility = "hidden";
+    if(!PCC_INFO.touchscreen)
+    {
+        // touchscreen device variable
+        PCC_INFO.touchscreen = true;
+        // dropdown lists can be popups in touchscreen devices, so diable colour indicators for dropdowns
+        document.getElementById("PCC-colour-indicator").style.visibility = "hidden";
+
+        // make buttons and links larger 
+        var tds = this.document.getElementsByTagName("TD");
+        for(var i = 0; i < tds.length; i++)
+        {
+            tds[i].style.fontSize = "30px";
+        }
+        this.document.getElementById("PCC-order-form-link").style.fontSize = "36px";
+        this.document.getElementById("PCC-order-form-link").style.padding = "10px 0";
+        this.document.getElementById("PCC-download-image").style.fontSize = "36px";
+        this.document.getElementById("PCC-imgsize-options").style.fontSize = "34px";
+        this.document.getElementById("PCC-imgscale-selector").style.fontSize = "36px";
+        this.document.getElementById("PCC-appearance-disclaimer").style.fontSize = "22px";
+        var selects = this.document.getElementsByClassName("PCC-user-input");
+        for(var i = 0; i < selects.length; i++)
+        {
+            if(selects[i].id !== "PCC-surprise-button")
+            {
+                selects[i].style.fontSize = "36px";
+                selects[i].style.height = "84px";
+            }
+        }
+    }
 })
 
 window.addEventListener("click", function(event)

@@ -9,7 +9,7 @@ colourbox_location: '',
 loaded_images: 0,
 
 // should the page layout be desktop friendly or mobile friendly?
-page_layout: 'desktop',
+page_layout: '',
 // does the device use a touchscreen?
 touchscreen: false,
 

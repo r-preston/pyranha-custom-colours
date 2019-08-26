@@ -104,7 +104,9 @@ resize_wrapper: function resize_wrapper()
             var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
             var wrapper = document.getElementById("PCC-wrapper");
             // set wrapper to be tall enough to encompass canvas, plus some for the text at the bottom
-            wrapper.style.height = canvas_rect.bottom + scrollTop + 30 + 'px';      
+            var bottom_gap = document.getElementById("PCC-appearance-disclaimer").getBoundingClientRect().bottom;
+            wrapper.style.height = bottom_gap + scrollTop + 5 + 'px';    
+            document.getElementById("PCC-angry-fish-loading-message").style.height = canvas_rect.height;
         }
 
 
@@ -121,26 +123,47 @@ check_page_scaling: function check_page_scaling()
     var h = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
 
     var mobile_ratio_cutoff = 1;
+    
+    var surprise_button = document.getElementById("PCC-surprise-button");
 
-    if ((h/w > mobile_ratio_cutoff) && (PCC_INFO.page_layout === 'desktop'))
+    if ((h/w > mobile_ratio_cutoff) && (PCC_INFO.page_layout !== 'mobile'))
     {
         PCC_INFO.page_layout = 'mobile'
 
         //document.getElementById("PCC-table-needs-border").style.border = "none";
-        document.getElementById("PCC-surprise-button").style.height = "196px";
         var tables = document.getElementsByClassName("PCC-choice-table");
         tables[0].style.width = "100%";
         tables[1].style.width = "100%";
+        surprise_button.style.height = (2*tables[0].offsetHeight).toString()+"px";
+        surprise_button.style.marginTop = (-1*tables[0].offsetHeight).toString()+"px";
+        surprise_button.style.fontSize = "3vw";
     }
-    else if ((h/w < mobile_ratio_cutoff) && (PCC_INFO.page_layout === 'mobile'))
+    else if ((h/w < mobile_ratio_cutoff) && (PCC_INFO.page_layout !== 'desktop'))
     {
         PCC_INFO.page_layout = 'desktop'
         // change display to desktop mode
         //document.getElementById("PCC-table-needs-border").style.borderRight = "1px solid white";
-        document.getElementById("PCC-surprise-button").style.height = "98px";
         var tables = document.getElementsByClassName("PCC-choice-table");
         tables[0].style.width = "50%";
         tables[1].style.width = "50%";
+        surprise_button.style.height = tables[0].offsetHeight.toString()+"px";
+        surprise_button.style.marginTop = "0px";
+        surprise_button.style.fontSize = "26px";
+    }
+
+    if(surprise_button.offsetWidth < 110)
+    {
+        if(surprise_button.style.fontSize !== "3vw")
+        {
+            surprise_button.style.fontSize = "3vw";
+        }
+    }
+    else
+    {
+        if(surprise_button.style.fontSize !== "24px")
+        {
+            surprise_button.style.fontSize = "24px";
+        }
     }
 },
 
