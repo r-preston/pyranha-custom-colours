@@ -16,7 +16,7 @@ isIE: function isIE()
 get_element_position: function get_element_position(elem)
 {
     // returns the (x,y) position of the top right corner of an element relative to the viewport
-    var body_rect = document.body.getBoundingClientRect();
+    var body_rect = document.getElementById("PCC-wrapper").getBoundingClientRect();
     var elem_rect = elem.getBoundingClientRect();
     return [elem_rect.left - body_rect.left, elem_rect.top - body_rect.top];
 },

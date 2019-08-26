@@ -124,7 +124,23 @@ window.addEventListener('touchstart', function()
                 selects[i].style.height = "84px";
             }
         }
+        
+        this.window.requestAnimationFrame(function(){
+            var surprise_button = document.getElementById("PCC-surprise-button");
+            var tables = document.getElementsByClassName("PCC-choice-table");
+            if (PCC_INFO.page_layout === 'mobile')
+            {
+                surprise_button.style.height = (2*tables[0].offsetHeight).toString()+"px";
+                surprise_button.style.marginTop = (-1*tables[0].offsetHeight).toString()+"px";
+            }
+            else if (PCC_INFO.page_layout === 'desktop')
+            {
+                surprise_button.style.height = tables[0].offsetHeight.toString()+"px";
+                surprise_button.style.marginTop = "0px";
+            }
+        });
     }
+    
 })
 
 window.addEventListener("click", function(event)
@@ -153,9 +169,18 @@ window.addEventListener("click", function(event)
         // get position of the select element that was clicked
         var elem_pos = PCC_HELPERS.get_element_position(event.target);
         // move the colourbox to the right place beside the dropdown and make visible
-        colourbox.style.left = elem_pos[0] - 24 + 'px';
+        if(elem_pos[0] < 26)
+        {
+            colourbox.style.left = elem_pos[0] + event.target.offsetWidth + 'px';
+        }
+        else
+        {
+            colourbox.style.left = elem_pos[0] - 26 + 'px';
+        }
         colourbox.style.top = elem_pos[1] + event.target.scrollHeight + 'px';
         colourbox.style.visibility = "visible";
+        this.console.log(elem_pos)
+        this.console.log(event.x +","+event.y)
 
         // for each option in the dropdown (which are the children of the <select> element)
         for(var i = 0; i < event.target.children.length; i++)
@@ -165,6 +190,9 @@ window.addEventListener("click", function(event)
             var colourblob = document.createElement("DIV");
             var clr = colour_lists[target_index][event.target.children[i].value];
             colourblob.style.backgroundColor = "rgb("+clr[0]+","+clr[1]+","+clr[2]+")";
+            colourblob.style.width  = "25px";
+            colourblob.style.height = "25px";
+            this.console.log(event.target.children[i].offsetHeight)
             colourbox.appendChild(colourblob);
         }
 

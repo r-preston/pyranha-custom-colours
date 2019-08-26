@@ -182,7 +182,7 @@ colour_options:
 grab_colours:
 {
     Grey:   [140, 140, 140],
-    Red:    [180, 20,  30 ],
+    Red:    [160, 30,  30 ],
     Purple: [144, 38,  143],
     Yellow: [247, 147, 29 ],
     Blue:   [0,   140, 180]
