@@ -1,10 +1,3 @@
-/*
-What next?
- - revise more you lazy sod
- - READMEs
- - review colour options
-*/
-
 window.addEventListener("load", function(event)
 {
     try
